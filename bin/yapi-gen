@@ -4,6 +4,8 @@ const path = require('path')
 const option = require(path.resolve(process.cwd(), 'yapi-gen.config.js'))
 const core = require('../src/index')
 
-core(option).catch(err=>{
+core(option).then(()=>{
+  console.log('生成代码成功')
+}).catch(err=>{
   console.error(err)
 })
