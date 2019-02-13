@@ -27,7 +27,7 @@ module.exports = {
 
 ```
 
-2.在当前目前执行 yapi-gen-js-code
+2.在当前目录下执行 yapi-gen-js-code
 
 ```
 yapi-gen-js-code
