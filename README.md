@@ -33,13 +33,13 @@ yapi-gen-js-code
 ## yapi-gen.config.js配置项说明
 
 | name | 类型 | 默认值 | 描述信息 |  
-| ---- | --- | --- | ---- | --- |
+| ---- | --- | --- | ---- | 
 | server | String | - | 服务器地址，比如: http://yapi.demo.qunar.com | 
 | token | String | - | 项目token |  
 | dist | String | - | 生成文件路径 |  
 | template | String Or Function | axios | 模板名，目前仅内置了 axios 模板，自定义请查看下面文档 | 
-| <span class="colour" style="color: rgb(211, 175, 134);">globalCode</span> | String | <span class="colour" style="color: rgb(136, 155, 74);">const axios = require('axios');</span> | 全局代码，会注入到最前面 |  
-| <span class="colour" style="color: rgb(138, 177, 176);">methodName</span> | Function | 请参考源码 | 方法名生成函数，一般无需改动 |  |  |
+| globalCode | String |const axios = require('axios'); | 全局代码，会注入到最前面 |  
+| methodName | Function | 请参考源码 | 方法名生成函数，一般无需改动 |
 | categoryId | String | - | 项目分类id, 填写后只生成某个分类下的接口，默认生成该项目所有接口请求代码 | 
 
 
