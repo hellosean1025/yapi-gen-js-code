@@ -2,6 +2,11 @@
 
 根据 YApi 的接口定义生成 javascript 的请求函数，目前内置了 axios 请求模板
 
+## 功能
+1. 支持 restful api
+2. 支持 get, post 等多种请求体
+3. 支持验证请求参数，需要依赖 ava 
+
 ## 安装
 
 ```
