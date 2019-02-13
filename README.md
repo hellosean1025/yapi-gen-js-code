@@ -1,5 +1,7 @@
 # yapi-gen-js-code
 
+> 该工具目前还不完善，请勿正式使用
+
 根据 YApi 的接口定义生成 javascript 的请求函数，目前内置了 axios 请求模板
 
 ## 功能
