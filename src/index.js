@@ -39,7 +39,7 @@ async function gen (options = {}) {
     // 'res_body'  //返回数据内容
   ];
 
-  if(process.env.NODE_ENV !== 'production'){
+  if(config.enableValidte){
     fields = [].concat(fields, [
       'req_query',
       'req_headers',

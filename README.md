@@ -30,6 +30,8 @@ yapi-gen-js-code
 
 执行完成后，即可生成 yapi-gen-js-code.js 请求文件
 
+可参考该 [demo](https://github.com/hellosean1025/yapi-gen-js-code/blob/master/demo/yapi-gen-js-code.js)
+
 ## yapi-gen.config.js配置项说明
 
 | name | 类型 | 默认值 | 描述信息 |  
@@ -41,6 +43,7 @@ yapi-gen-js-code
 | globalCode | String |const axios = require('axios'); | 全局代码，会注入到最前面 |  
 | methodName | Function | 请参考源码 | 方法名生成函数，一般无需改动 |
 | categoryId | String | - | 项目分类id, 填写后只生成某个分类下的接口，默认生成该项目所有接口请求代码 | 
+| enableValidte | Boolean | true| 是否开启参数验证，默认是开启的，需要引入 ava 依赖|
 
 
 ## 自定义模板
@@ -59,10 +62,7 @@ yapi-gen-js-code
           data: params
         }, options)
 
-        /**
-         * 只有在测试环境，才会开启请求参数验证
-         */
-        if(process.env.NODE_ENV !== 'production' && checkRequestParams && typeof checkRequestParams === 'function'){
+        if(checkRequestParams && typeof checkRequestParams === 'function'){
           checkRequestParams(interfaceData ,params)
         }
 

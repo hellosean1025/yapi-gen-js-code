@@ -28,5 +28,6 @@ module.exports = {
   },
   server: '',
   token: '项目token',
-  dist: path.resolve(process.cwd(), 'yapi-gen-js-code.js')
+  dist: path.resolve(process.cwd(), 'yapi-gen-js-code.js'),
+  enableValidte: true
 }

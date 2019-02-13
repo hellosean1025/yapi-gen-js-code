@@ -2,10 +2,7 @@ const fs = require ('fs');
 const path = require ('path');
 const config = require('./config')
 
-const requestParamsCheckTpl = fs.readFileSync (
-  path.resolve (__dirname, './requestParamsCheckTpl.js'),
-  'utf8'
-);
+let requestParamsCheckTpl;
 
 const schemaValidator = fs.readFileSync (
   path.resolve (__dirname, './schemaValidator.js'),
@@ -13,6 +10,14 @@ const schemaValidator = fs.readFileSync (
 );
 
 module.exports = function genCode (interfaceList) {
+  if(config.enableValidte){
+    requestParamsCheckTpl = fs.readFileSync (
+      path.resolve (__dirname, './requestParamsCheckTpl.js'),
+      'utf8'
+    );
+  }else{
+    requestParamsCheckTpl  = 'function checkRequestParams(){}'
+  }
   let templateContent;
   if(typeof config.template === 'string'){
     templateContent = fs.readFileSync (
