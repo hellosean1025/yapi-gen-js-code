@@ -1,0 +1,24 @@
+{
+  "name": "yapi-gen-js-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "bin": {
+    "yapi-gen-js-code": "./bin/yapi-gen"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "json5": "^2.1.0",
+    "yargs": "^13.1.0"
+  },
+  "devDependencies": {
+    "ajv": "^6.9.1",
+    "ava": "^1.2.1",
+    "rewire": "^4.0.1"
+  }
+}

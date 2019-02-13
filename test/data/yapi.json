@@ -1,0 +1,185 @@
+[
+  {
+    "index": 0,
+    "name": "公共分类",
+    "desc": "公共分类",
+    "add_time": 1550027179,
+    "up_time": 1550027179,
+    "list": [
+      {
+        "query_path": {
+          "path": "/api/form",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 747,
+        "method": "POST",
+        "catid": 323,
+        "title": "form-test",
+        "path": "/api/form",
+        "project_id": 70,
+        "req_params": [],
+        "res_body_type": "json",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5c63851bf85d99daa3666c1a",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "5c63851bf85d99daa3666c1c",
+            "name": "xxx",
+            "type": "text"
+          },
+          {
+            "required": "1",
+            "_id": "5c63851bf85d99daa3666c1b",
+            "name": "yyyy",
+            "type": "text",
+            "example": "",
+            "desc": ""
+          }
+        ],
+        "desc": "",
+        "markdown": "",
+        "req_body_type": "form",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{}}",
+        "uid": 11,
+        "add_time": 1550027188,
+        "up_time": 1550027188,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/api/jsonschema",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 765,
+        "method": "POST",
+        "catid": 323,
+        "title": "jsonschema-test",
+        "path": "/api/jsonschema",
+        "project_id": 70,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 11,
+        "add_time": 1550028552,
+        "up_time": 1550028635,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5c638f5bc2590866be46f5f0",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_other": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"a\":{\"type\":\"string\"},\"b\":{\"type\":\"string\"},\"c\":{\"type\":\"string\"}},\"required\":[\"a\",\"b\"]}",
+        "req_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{}}"
+      },
+      {
+        "query_path": {
+          "path": "/api/restful/:id",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 753,
+        "method": "GET",
+        "catid": 323,
+        "title": "restful-test",
+        "path": "/api/restful/:id",
+        "project_id": 70,
+        "req_params": [
+          {
+            "_id": "5c637fdb4436b5da8f8d9ac5",
+            "name": "id",
+            "desc": ""
+          }
+        ],
+        "res_body_type": "json",
+        "req_query": [],
+        "req_headers": [],
+        "req_body_form": [],
+        "desc": "",
+        "markdown": "",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"field_1\":{\"type\":\"string\"},\"field_2\":{\"type\":\"string\"},\"field_3\":{\"type\":\"string\"}},\"required\":[\"field_1\",\"field_2\",\"field_3\"]}",
+        "uid": 11,
+        "add_time": 1550027188,
+        "up_time": 1550027188,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/api/m/data/malldatacenter/cptSkuPriceIndex/getCptBrandList",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 759,
+        "method": "GET",
+        "catid": 323,
+        "title": "test1",
+        "path": "/api/m/data/malldatacenter/cptSkuPriceIndex/getCptBrandList",
+        "project_id": 70,
+        "req_params": [],
+        "res_body_type": "json",
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "5c629e46fff085da992a02c6",
+            "name": "poiId",
+            "example": "11",
+            "desc": ""
+          }
+        ],
+        "req_headers": [],
+        "req_body_form": [],
+        "desc": "",
+        "markdown": "",
+        "res_body": "",
+        "uid": 11,
+        "add_time": 1550027188,
+        "up_time": 1550027188,
+        "__v": 0
+      }
+    ]
+  }
+]

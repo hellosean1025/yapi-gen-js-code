@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+const path = require('path')
+const option = require(path.resolve(process.cwd(), 'yapi-gen.config.js'))
+const core = require('../src/index')
+
+core(option).catch(err=>{
+  console.error(err)
+})
