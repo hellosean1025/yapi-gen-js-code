@@ -1,6 +1,13 @@
 # yapi-gen-js-code
 
+> 该工具目前还不完善，请勿正式使用
+
 根据 YApi 的接口定义生成 javascript 的请求函数，目前内置了 axios 请求模板
+
+## 功能
+1. 支持 restful api
+2. 支持 get, post 等多种请求体
+3. 支持验证请求参数，需要依赖 ava 
 
 ## 安装
 
@@ -22,7 +29,7 @@ module.exports = {
 
 ```
 
-2.在当前目前执行 yapi-gen-js-code
+2.在当前目录下执行 yapi-gen-js-code
 
 ```
 yapi-gen-js-code
