@@ -1,9 +1,9 @@
 const axios = require ('axios');
 const fs = require ('fs');
-const path = require ('path');
 const genCode = require ('./genCode');
 const json5 = require('json5');
 const config = require('./config')
+const {getDataByFields} = require('./utils')
 
 function json_parse(json){
   try{
@@ -15,8 +15,22 @@ function json_parse(json){
 
 module.exports = gen;
 
-async function gen (options = {}) {
-  Object.assign (config, options);
+function errLog(message){
+  console.log(message)
+  process.exit(1)
+} 
+
+async function getProjectInfo(config){
+  let result;
+  try{
+    result = await axios.get(`${config.server}/api/project/get?token=${config.token}`)
+  }catch(e){
+    errLog('请求 /api/project/get 失败，请检查网络或 token')
+  }
+  return result.data.data;
+}
+
+async function getInterfaceList(config){
   let result;
   try{
     result = await axios.get (
@@ -24,31 +38,32 @@ async function gen (options = {}) {
     );
     
   }catch(err){
-    console.log('调用 /api/interface/list 失败，请检查网络')
+    errLog('调用 /api/interface/list 失败，请检查网络或 token')
   }
 
-  let list = result.data.data.list;
+  return result.data.data.list;
+}
+
+async function gen (options = {}) {
+  Object.assign (config, options);
+  const projectData = await getProjectInfo(config)
+  const list = await getInterfaceList(config)
 
   let fields = [
     'title',
     'path',
     'method',
     'req_params',
+    'req_query',
+    'req_headers',
+    'req_body_type',
+    'req_body_is_json_schema',
+    'req_body_form',
+    'req_body_other',
     // 'res_body_type',   // 返回数据type
     // 'res_body_is_json_schema',  //返回数据结构是否为json-schema
     // 'res_body'  //返回数据内容
   ];
-
-  if(config.enableValidte){
-    fields = [].concat(fields, [
-      'req_query',
-      'req_headers',
-      'req_body_type',
-      'req_body_is_json_schema',
-      'req_body_form',
-      'req_body_other',
-    ])
-  } 
   
   let interfaceList = []
 
@@ -63,6 +78,7 @@ async function gen (options = {}) {
     let interfaceData = result.data.data;
     interfaceData = getDataByFields(interfaceData, fields)
     interfaceData.req_body_other = json_parse(interfaceData.req_body_other);
+    interfaceData.path = projectData.basepath + interfaceData.path;
     interfaceList.push(interfaceData)
   }
 
@@ -72,16 +88,4 @@ async function gen (options = {}) {
   fs.writeFileSync (config.dist, code, 'utf8');
 }
 
-function getDataByFields (data, field) {
-  if (!data || !field || !Array.isArray (field)) {
-    return null;
-  }
 
-  var arr = {};
-
-  field.forEach (f => {
-    typeof data[f] !== 'undefined' && (arr[f] = data[f]);
-  });
-
-  return arr;
-}

@@ -32,6 +32,10 @@ yapi-gen-js-code
 
 可参考该 [demo](https://github.com/hellosean1025/yapi-gen-js-code/blob/master/demo/yapi-gen-js-code.js)
 
+### 生成代码示例
+
+![](2019-02-14-11-50-00.png)
+
 ## yapi-gen.config.js配置项说明
 
 | name | 类型 | 默认值 | 描述信息 |  

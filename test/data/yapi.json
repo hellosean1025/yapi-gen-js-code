@@ -22,7 +22,7 @@
         "_id": 747,
         "method": "POST",
         "catid": 323,
-        "title": "form-test",
+        "title": "form 接口测试",
         "path": "/api/form",
         "project_id": 70,
         "req_params": [],
@@ -31,7 +31,7 @@
         "req_headers": [
           {
             "required": "1",
-            "_id": "5c63851bf85d99daa3666c1a",
+            "_id": "5c64d26e5f0db102ab3bc81f",
             "name": "Content-Type",
             "value": "application/x-www-form-urlencoded"
           }
@@ -39,17 +39,18 @@
         "req_body_form": [
           {
             "required": "1",
-            "_id": "5c63851bf85d99daa3666c1c",
+            "_id": "5c64d26e5f0db102ab3bc821",
             "name": "xxx",
-            "type": "text"
+            "type": "text",
+            "desc": "订单编号"
           },
           {
             "required": "1",
-            "_id": "5c63851bf85d99daa3666c1b",
+            "_id": "5c64d26e5f0db102ab3bc820",
             "name": "yyyy",
             "type": "text",
             "example": "",
-            "desc": ""
+            "desc": "用户名"
           }
         ],
         "desc": "",
@@ -58,7 +59,7 @@
         "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{}}",
         "uid": 11,
         "add_time": 1550027188,
-        "up_time": 1550027188,
+        "up_time": 1550111342,
         "__v": 0
       },
       {
@@ -77,19 +78,19 @@
         "_id": 765,
         "method": "POST",
         "catid": 323,
-        "title": "jsonschema-test",
+        "title": "jsonschema接口测试",
         "path": "/api/jsonschema",
         "project_id": 70,
         "req_params": [],
         "res_body_type": "json",
         "uid": 11,
         "add_time": 1550028552,
-        "up_time": 1550028635,
+        "up_time": 1550111387,
         "req_query": [],
         "req_headers": [
           {
             "required": "1",
-            "_id": "5c638f5bc2590866be46f5f0",
+            "_id": "5c64d29b5f0db102ab3bc824",
             "name": "Content-Type",
             "value": "application/json"
           }
@@ -98,7 +99,7 @@
         "__v": 0,
         "desc": "",
         "markdown": "",
-        "req_body_other": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"a\":{\"type\":\"string\"},\"b\":{\"type\":\"string\"},\"c\":{\"type\":\"string\"}},\"required\":[\"a\",\"b\"]}",
+        "req_body_other": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"a\":{\"type\":\"string\",\"description\":\"参数a\"},\"b\":{\"type\":\"string\",\"description\":\"参数b\"},\"c\":{\"type\":\"number\",\"description\":\"参数c\"}},\"required\":[\"a\",\"b\"]}",
         "req_body_type": "json",
         "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{}}"
       },
@@ -118,12 +119,12 @@
         "_id": 753,
         "method": "GET",
         "catid": 323,
-        "title": "restful-test",
+        "title": "restful动态路径测试",
         "path": "/api/restful/:id",
         "project_id": 70,
         "req_params": [
           {
-            "_id": "5c637fdb4436b5da8f8d9ac5",
+            "_id": "5c64d2ba5f0db102ab3bc826",
             "name": "id",
             "desc": ""
           }
@@ -134,10 +135,10 @@
         "req_body_form": [],
         "desc": "",
         "markdown": "",
-        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"field_1\":{\"type\":\"string\"},\"field_2\":{\"type\":\"string\"},\"field_3\":{\"type\":\"string\"}},\"required\":[\"field_1\",\"field_2\",\"field_3\"]}",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{\"field_1\":{\"type\":\"string\",\"description\":\"字段1\"},\"field_2\":{\"type\":\"boolean\",\"description\":\"字段2\"},\"field_3\":{\"type\":\"string\",\"description\":\"字段3\"}},\"required\":[\"field_1\",\"field_2\",\"field_3\"]}",
         "uid": 11,
         "add_time": 1550027188,
-        "up_time": 1550027188,
+        "up_time": 1550111418,
         "__v": 0
       },
       {
@@ -156,7 +157,7 @@
         "_id": 759,
         "method": "GET",
         "catid": 323,
-        "title": "test1",
+        "title": "基本测试",
         "path": "/api/m/data/malldatacenter/cptSkuPriceIndex/getCptBrandList",
         "project_id": 70,
         "req_params": [],
@@ -164,20 +165,20 @@
         "req_query": [
           {
             "required": "1",
-            "_id": "5c629e46fff085da992a02c6",
+            "_id": "5c64d2a45f0db102ab3bc825",
             "name": "poiId",
             "example": "11",
-            "desc": ""
+            "desc": "门店"
           }
         ],
         "req_headers": [],
         "req_body_form": [],
         "desc": "",
         "markdown": "",
-        "res_body": "",
+        "res_body": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{}}",
         "uid": 11,
         "add_time": 1550027188,
-        "up_time": 1550027188,
+        "up_time": 1550111396,
         "__v": 0
       }
     ]

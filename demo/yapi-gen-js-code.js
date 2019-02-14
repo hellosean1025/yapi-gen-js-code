@@ -2,21 +2,28 @@ const axios = require('axios');
 
 
 /**
- * @title form-test
- * @path /api/form
- * 
+ * @title form 接口测试
+ * @path /http/request/api/form
+ * @param {Object} params 请求参数
+ * @param {Object} options 请求配置
+ * @info params
+ {
+    xxx: '', // {string} * 订单编号 
+    yyyy: '', // {string} * 用户名 
+
+ }
  */
-exports.api_form = function(params, options = {}){
+exports.api_form = function(params, options){
   let interfaceData={
-  "title": "form-test",
-  "path": "/api/form",
+  "title": "form 接口测试",
+  "path": "/http/request/api/form",
   "method": "POST",
   "req_params": [],
   "req_query": [],
   "req_headers": [
     {
       "required": "1",
-      "_id": "5c63851bf85d99daa3666c1a",
+      "_id": "5c64d26e5f0db102ab3bc81f",
       "name": "Content-Type",
       "value": "application/x-www-form-urlencoded"
     }
@@ -26,17 +33,18 @@ exports.api_form = function(params, options = {}){
   "req_body_form": [
     {
       "required": "1",
-      "_id": "5c63851bf85d99daa3666c1c",
+      "_id": "5c64d26e5f0db102ab3bc821",
       "name": "xxx",
-      "type": "text"
+      "type": "text",
+      "desc": "订单编号"
     },
     {
       "required": "1",
-      "_id": "5c63851bf85d99daa3666c1b",
+      "_id": "5c64d26e5f0db102ab3bc820",
       "name": "yyyy",
       "type": "text",
       "example": "",
-      "desc": ""
+      "desc": "用户名"
     }
   ],
   "req_body_other": null
@@ -46,21 +54,29 @@ exports.api_form = function(params, options = {}){
   
 
 /**
- * @title jsonschema-test
- * @path /api/jsonschema
- * 
+ * @title jsonschema接口测试
+ * @path /http/request/api/jsonschema
+ * @param {Object} params 请求参数
+ * @param {Object} options 请求配置
+ * @info params
+ {
+    a: '', // {string} * 参数a 
+    b: '', // {string} * 参数b 
+    c: '', // {number}  参数c 
+
+ }
  */
-exports.api_jsonschema = function(params, options = {}){
+exports.api_jsonschema = function(params, options){
   let interfaceData={
-  "title": "jsonschema-test",
-  "path": "/api/jsonschema",
+  "title": "jsonschema接口测试",
+  "path": "/http/request/api/jsonschema",
   "method": "POST",
   "req_params": [],
   "req_query": [],
   "req_headers": [
     {
       "required": "1",
-      "_id": "5c638f5bc2590866be46f5f0",
+      "_id": "5c64d29b5f0db102ab3bc824",
       "name": "Content-Type",
       "value": "application/json"
     }
@@ -73,13 +89,16 @@ exports.api_jsonschema = function(params, options = {}){
     "title": "empty object",
     "properties": {
       "a": {
-        "type": "string"
+        "type": "string",
+        "description": "参数a"
       },
       "b": {
-        "type": "string"
+        "type": "string",
+        "description": "参数b"
       },
       "c": {
-        "type": "string"
+        "type": "number",
+        "description": "参数c"
       }
     },
     "required": [
@@ -93,18 +112,24 @@ exports.api_jsonschema = function(params, options = {}){
   
 
 /**
- * @title restful-test
- * @path /api/restful/:id
- * 
+ * @title restful动态路径测试
+ * @path /http/request/api/restful/:id
+ * @param {Object} params 请求参数
+ * @param {Object} options 请求配置
+ * @info params
+ {
+    id: '', // {string}   
+
+ }
  */
-exports.get_restful_id = function(params, options = {}){
+exports.get_restful_id = function(params, options){
   let interfaceData={
-  "title": "restful-test",
-  "path": "/api/restful/:id",
+  "title": "restful动态路径测试",
+  "path": "/http/request/api/restful/:id",
   "method": "GET",
   "req_params": [
     {
-      "_id": "5c637fdb4436b5da8f8d9ac5",
+      "_id": "5c64d2ba5f0db102ab3bc826",
       "name": "id",
       "desc": ""
     }
@@ -120,23 +145,29 @@ exports.get_restful_id = function(params, options = {}){
   
 
 /**
- * @title test1
- * @path /api/m/data/malldatacenter/cptSkuPriceIndex/getCptBrandList
- * 
+ * @title 基本测试
+ * @path /http/request/api/m/data/malldatacenter/cptSkuPriceIndex/getCptBrandList
+ * @param {Object} params 请求参数
+ * @param {Object} options 请求配置
+ * @info params
+ {
+    poiId: '', // {string} * 门店 
+
+ }
  */
-exports.cptSkuPriceIndex_getCptBrandList = function(params, options = {}){
+exports.cptSkuPriceIndex_getCptBrandList = function(params, options){
   let interfaceData={
-  "title": "test1",
-  "path": "/api/m/data/malldatacenter/cptSkuPriceIndex/getCptBrandList",
+  "title": "基本测试",
+  "path": "/http/request/api/m/data/malldatacenter/cptSkuPriceIndex/getCptBrandList",
   "method": "GET",
   "req_params": [],
   "req_query": [
     {
       "required": "1",
-      "_id": "5c629e46fff085da992a02c6",
+      "_id": "5c64d2a45f0db102ab3bc825",
       "name": "poiId",
       "example": "11",
-      "desc": ""
+      "desc": "门店"
     }
   ],
   "req_headers": [],
@@ -190,31 +221,24 @@ function checkRequestParams (interfaceData, params) {
   const HTTP_METHOD = {
     GET: {
       request_body: false,
-      default_tab: 'query',
     },
     POST: {
       request_body: true,
-      default_tab: 'body',
     },
     PUT: {
       request_body: true,
-      default_tab: 'body',
     },
     DELETE: {
       request_body: true,
-      default_tab: 'body',
     },
     HEAD: {
       request_body: false,
-      default_tab: 'query',
     },
     OPTIONS: {
       request_body: false,
-      default_tab: 'query',
     },
     PATCH: {
       request_body: true,
-      default_tab: 'body',
     },
   };
 
@@ -309,14 +333,44 @@ function httpRequest(interfaceData, params, options){
       delete params[item.name]
     })
   }
+const HTTP_METHOD = {
+  GET: {
+    request_body: false,
+  },
+  POST: {
+    request_body: true,
+  },
+  PUT: {
+    request_body: true,
+  },
+  DELETE: {
+    request_body: true,
+  },
+  HEAD: {
+    request_body: false,
+  },
+  OPTIONS: {
+    request_body: false,
+  },
+  PATCH: {
+    request_body: true,
+  },
+};
+
 function request(baseinfo, options = {}){
   let params = baseinfo.params;
 
   options = Object.assign({}, {
     url: baseinfo.url,
     method: baseinfo.method,
-    data: params
+    
   }, options)
+
+  if(HTTP_METHOD[baseinfo.method].request_body){
+    options.data = params;
+  }else{
+    options.params = params;
+  }
 
   if(checkRequestParams && typeof checkRequestParams === 'function'){
     checkRequestParams(interfaceData ,params)
